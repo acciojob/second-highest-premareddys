@@ -10,14 +10,18 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
-			let max=0;
-			if(arr > max){
-		         arr = max;
-			}
-			console.log(+arr);
-			else{
-				console.log("-Infinity"); 
-			}	
+			let largest = arr[0];
+            let secondLargest = -Infinity;
+       for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > largest) {
+           secondLargest = largest;
+           largest = arr[i];
+         } 
+		else if (arr[i] < largest && arr[i] > secondLargest) {
+        secondLargest = arr[i];
+        }
+     }
+       return secondLargest;	
 		}
 
 		function Main() {
